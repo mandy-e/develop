@@ -1,0 +1,11 @@
+<Files *>
+
+AuthType WebAuth
+
+require user merdei
+
+satisfy any
+
+order allow,deny
+
+</Files>
