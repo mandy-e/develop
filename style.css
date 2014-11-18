@@ -1,0 +1,201 @@
+/* CSS designed by Robert Erickson
+to understand the comments like 900px / 960px
+read http://alistapart.com/article/responsive-web-design/
+*/
+/***************** main layout section ************************/
+body{
+	margin: 36px auto;
+	width: 90%;
+	background-image: url(ouran.jpg);
+}
+#page{
+	margin: 0 auto 53px;
+	width: 93.75%; /* 900px / 960px */
+	border: 1px solid black;
+	border-radius: 15px;
+}
+#main{
+	float: left;
+	width: 62.8888889%; /* 566px / 900px */
+	/*makes transparent background - change by last #=% but not transparent content*/
+	background:rgba(255,255,255,0.9);
+	border: 1px solid white;
+	border-top-left-radius: 70px;
+	border-bottom-right-radius: 70px;
+	padding-left: 0.5%;
+	padding-right: 0.5%;
+}
+#other{
+	float: right;
+	width: 36.7777778%; /* 331px / 900px */
+}
+/***************** header section *****************************/
+header h1 {
+	padding: 0.8em 5.33333333%; /* 48px / 900px */
+	font-size: .00000000000001%;
+}
+/***************** navigation section *****************************/
+nav ol {
+	padding-left: 5.33333333%; /* 48px / 900px */
+}
+nav ol li{
+	display: inline-block;
+	list-style-type: none;
+	padding-right: 3em;
+}
+/***************** article section ****************************/
+/* un comment and see what happens */
+/*
+article{
+height: 200px;
+overflow: auto;
+}
+*/
+article h1{
+	padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+	font-family: cursive, serif;
+	color: #000aaa;
+}
+article p, article table{
+	padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+	font-family: caption, arial;
+}
+h2 {
+	color: #440088;
+	display: inline-block;
+	font-family: birds;
+	font-size: 2.5em;
+	padding-left: 3em;
+	font-weight: 400;
+}
+/***************** aside section *****************************/
+aside {
+	margin: 0 auto;
+	width: 69.7885196%; /* 231px / 331px */
+}
+aside h2, aside p{
+	padding: .2em 8.48056537% .2em 8.48056537%; /* 48px / 566px */
+}
+/***************** footer section ****************************/
+footer{
+	clear: both;
+	padding: 0.8em 5.33333333%; /* 48px / 900px */
+	text-align: center;
+	color: #000aaa;
+	font-size: 2.2em;
+	font-family: birds, serif;
+}
+/***************** form section ****************************/
+#form article#main{
+	float: none;
+	margin: auto; /* because of the fixed width this centers the form */
+	text-align: left;
+	width: 65%; 
+	min-width: 300px;
+	background-color: #ffffbb;
+  	border: 1px solid white;
+    border-top-left-radius: 65px;
+	border-bottom-right-radius: 65px;
+}
+/* need to clear any floats that may exist */
+fieldset{
+	border: 1px solid #000000;
+	clear: both;
+}
+/* just pushes content to left side of the box. */
+fieldset.contact{
+	float: left;
+	width: 60%;
+	background-color: #ffffff;
+}
+/* when you look at the labels this pushes then next to the input and right
+aligns them. Display block means they are each on their own line. */
+fieldset.contact label{
+	display: block;
+	text-align: right /* pushes the text to the right where they line up */
+	/* the float left above pushes everything back to the left*/
+}
+fieldset.contact input{
+	width: 190px; /* works with above to be the same size for the boxes */
+}
+fieldset.buttons{
+	border: none;
+}
+fieldset.wrapper {
+	border: 0;
+	margin: auto;
+}
+fieldset.wrapper legend {
+	color: #000aaa;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 10px;
+	font-family: cursive, serif;
+}
+fieldset.wrapper > legend {
+/* i only want the first legend ie if it follows the class wrapper */
+	font-size: 3em;
+	color: #000aaa;
+	padding-left: 4%;
+	padding-top: 2%;
+	font-family: birds, serif;
+	font-weight: 500;
+}
+.listbox {
+	width: 198px;
+}
+label {
+	color: #000000;
+	display: block;
+	font-size: .9em;
+	font-family: caption, arial;
+}
+#reset {
+background-color: #ffff77;
+border: 1px solid #ffff55;
+border-radius: 6em;
+padding-top: 2em;
+padding-bottom: 2em;
+padding-left: 1.5em;
+padding-right: 1.5em;
+
+}
+/* style the errors in the form so they are visible */
+.mistake {
+	color: #fff;
+	background-color:#800;
+	border: thin solid #000;
+}
+/* style the list of errors that will show before the form */
+#errors ol li{
+	color: #ff5555;
+}
+/***************** query results section ****************************/
+table{
+	border: medium #116633 solid;
+	border-collapse: collapse;
+	width: 90%;
+	margin: auto;
+	max-width: 1000px;
+}
+td, th {
+	border: thin #116633 solid;
+	border-collapse: collapse;
+	text-align: center;
+}
+tr:nth-child(even) {
+	background-color: #ffff77;
+}
+tr:nth-child(odd){
+	background-color: whitesmoke;
+}
+
+/***************** font section ****************************/
+
+.customfont1 {
+    font-family: "birds",arial,san-serif;
+}
+@font-face {
+    font-family: "birds";
+    src: url("https://merdei.w3.uvm.edu/cs148/assignment6.0/birds.ttf") format("truetype");
+}
