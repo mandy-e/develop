@@ -21,9 +21,8 @@ $debug = false;
 // Step one: generally code is in top.php
 require_once('../bin/myDatabase.php');
 
-$dbUserName = get_current_user() . '_writer';
-$whichPass = "w"; //flag for which one to use.
-//SAY WHICH DATABASE YOU'RE ACCESSING!!! (BELOW)
+$dbUserName = get_current_user() . '_reader';
+$whichPass = "r"; //flag for which one to use.
 $dbName = strtoupper(get_current_user()) . '_CHORAL_LIBRARY';
 
 $thisDatabase = new myDatabase($dbUserName, $whichPass, $dbName);
@@ -53,19 +52,19 @@ print "</pre>";
 // inlcude all libraries
 //
 require_once('lib/security.php');
-if($path_parts['filename'] == "register") {
-	}
+//if($path_parts['filename'] == "newForm") {
+//	}
 	include "lib/mail-message.php";
 	include "lib/validation-functions.php";
 	
-if ($path_parts['filename'] == "form") {
-	include "lib/validation-functions.php";
-	include "lib/mail-message.php";
-	}
+//if ($path_parts['filename'] == "form") {
+//	include "lib/validation-functions.php";
+//	include "lib/mail-message.php";
+//	}
 ?>	
 </head>
 <!-- ################ body section ######################### -->
 <?php
 print '<body id="' . $path_parts['filename'] . '">';
-include "nav.php";
+include "nav-search.php";
 ?>

@@ -107,7 +107,7 @@ if (isset($_POST["btnSubmit"])) {
 // remove any potential JavaScript or html code from users input on the
 // form. Note it is best to follow the same order as declared in section 1c.
 	$username = htmlentities($_POST["txtUsername"], ENT_QUOTES, "UTF-8");
-	$password = htmlentities($_POST["txtUsername"], ENT_QUOTES, "UTF-8");
+	$password = htmlentities($_POST["txtPassword"], ENT_QUOTES, "UTF-8");
     $email = filter_var($_POST["txtEmail"], FILTER_SANITIZE_EMAIL);
 
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

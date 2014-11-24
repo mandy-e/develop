@@ -19,7 +19,7 @@ print '<h1>Approval Confirmation</h1>';
 //
 // SECTION: 1a.
 // variables for the classroom purposes to help find errors.
-$debug = false;
+$debug = true;
 if (isset($_GET["debug"])) { // ONLY do this in a classroom environment
     $debug = true;
 }
@@ -63,8 +63,9 @@ if (isset($_GET["q"])) {
     //##############################################################
     // update confirmed
     if ($key1 == $k1) {
-        if ($debug)
+        if ($debug) {
             print "<h1>Approved</h1>";
+            }
 
         $query = "UPDATE tblRegister SET fldApproved=1 WHERE pmkRegisterId = ? ";
         $results = $thisDatabase->update($query, $data);
@@ -84,8 +85,9 @@ if (isset($_GET["q"])) {
         $message .= "<p>or copy and paste this url into a web browser: ";
         $message .= $path_parts["dirname"] . '/approve.php?q=' . $key2 . "</p>";*/
 
-        if ($debug)
+        if ($debug) {
             print "<p>" . $message;
+            }
 
         $to = $adminEmail;
         $cc = "";
@@ -110,10 +112,8 @@ if (isset($_GET["q"])) {
         $from = "UVM Choral Library <noreply@choral-library.com>";
         $subject = "Approval Confirmed - You may now access the choral library records";
         $message = "<p>Congratulations! You have been granted access to add, modify, and delete records from the Choral Library Database.</p>";
-
         $mailed = sendMail($to, $cc, $bcc, $from, $subject, $message);
-
-        print $message;
+		print $mailed;
         if ($debug) {
             print "<p>";
             if (!$mailed) {
